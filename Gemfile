@@ -48,6 +48,9 @@ gem 'bootsnap', require: false
 # Use Sass to process CSS
 gem 'sassc-rails'
 
+# Use Devise for authentication
+gem 'devise'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -64,6 +67,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'bullet'
+  gem 'letter_opener'
   gem 'cancancan'
   gem 'web-console'
 
