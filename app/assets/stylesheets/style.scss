@@ -85,9 +85,12 @@ ul {
 
 .field {
   & input {
-    border: none;
     height: 40px;
     width: 230px;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    border-bottom: solid 1px lightblue;
   }
 }
 
@@ -116,7 +119,7 @@ ul {
     color: #434b54;
 
     &:hover {
-      font-size: 18px;
+      color: #3778c2
     }
   }
 }
@@ -130,6 +133,6 @@ ul {
   
   &:hover {
     cursor: pointer;
-    font-size: 18px;
+    color: #3778c2;
   }
 }
