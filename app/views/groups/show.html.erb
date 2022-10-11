@@ -3,6 +3,7 @@
 <%= render @group %>
 
 <div>
+  <%= link_to "New transaction", new_group_budget_url(@group) %>
   <%= link_to "Edit this group", edit_group_path(@group) %> |
   <%= link_to "Back to groups", groups_path %>
 

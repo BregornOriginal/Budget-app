@@ -1,7 +1,7 @@
 <div id="<%= dom_id group %>">
+  
   <p>
-    <strong>Name:</strong>
-    <%= group.name %>
+    <strong><%= link_to group.name, group %></strong>
   </p>
 
   <p>
@@ -9,9 +9,5 @@
     <%= group.icon %>
   </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
 
 </div>
