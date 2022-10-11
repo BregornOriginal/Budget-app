@@ -13,18 +13,24 @@ class BudgetsController < ApplicationController
   # GET /budgets/new
   def new
     @budget = Budget.new
+    @group = Group.find(params[:group_id])
   end
 
   # GET /budgets/1/edit
-  def edit; end
+  def edit
+    @group = Group.find(params[:group_id])
+  end
 
   # POST /budgets or /budgets.json
   def create
+    @group = Group.find(params[:group_id])
     @budget = Budget.new(budget_params)
+    @budget.user = current_user
+    @budget.groups.push(@group)
 
     respond_to do |format|
       if @budget.save
-        format.html { redirect_to budget_url(@budget), notice: 'Budget was successfully created.' }
+        format.html { redirect_to group_budgets_path(@group), notice: 'Budget was successfully created.' }
         format.json { render :show, status: :created, location: @budget }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +71,6 @@ class BudgetsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def budget_params
-    params.require(:budget).permit(:name, :amount, :user_id)
+    params.require(:budget).permit(:name, :amount)
   end
 end
