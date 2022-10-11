@@ -6,7 +6,6 @@
 
 a {
   text-decoration: none;
-  color: white;
   &:hover {
     color: #434b54;
   }
@@ -75,4 +74,52 @@ ul {
   align-items: baseline;
   height: 80px;
   padding: 30px 10px 0 10px;
+  &li {
+    color: white
+  }
+}
+
+.fa-solid {
+  color: white;
+}
+
+.field {
+  & input {
+    border: none;
+    height: 40px;
+  }
+}
+
+.inputs_container {
+  padding: 20px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.remember_me_button{
+  display: flex;
+  padding: 10px 0 80px 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.actions {
+  color: #434b54;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    margin-top: 5px;
+    color: #434b54;
+
+    &:hover {
+      font-size: 18px;
+    }
+  }
+}
+
+.button .sign_up {
+  border: none;
 }
