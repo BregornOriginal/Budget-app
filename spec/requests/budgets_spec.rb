@@ -13,10 +13,10 @@ RSpec.describe 'Budget', type: :request do
       password: '123456'
     )
   end
-  
+
   describe 'GET /budgets' do
     before(:example) { get '/budgets' }
-    
+
     it 'returns http success' do
       sign_in(subject)
       expect(response).to have_http_status(:success)
