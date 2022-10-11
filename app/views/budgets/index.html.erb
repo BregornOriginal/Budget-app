@@ -1,6 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Budgets</h1>
+<div class='back_button_container'>
+  <%=link_to 'Go back', groups_url, class: 'create_button back_button' %>
+</div>
 
 <div id="budgets">
   <% @budgets.each do |budget| %>
