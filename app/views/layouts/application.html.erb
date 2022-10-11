@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <div class= "log_out_container">
+        <%= button_to "Log out", destroy_user_session_path,
+        { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
