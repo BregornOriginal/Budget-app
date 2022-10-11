@@ -21,10 +21,13 @@
     <%= form.number_field :amount %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+  <p>Categories
+    <% @budget.groups.each do |category| %>
+      <p>
+        <% image_tag("#{category.icon}.png", alt: category.name, title: category.name)%>
+      </p>
+    <% end %>
+  </p>
 
   <div>
     <%= form.submit %>
