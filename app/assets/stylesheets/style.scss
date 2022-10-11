@@ -39,6 +39,15 @@ ul {
     transform: translate(-50%, -50%)
   }
 }
+
+.phone_status {
+  display: flex;
+  padding: 10px 10px 0 10px;
+  justify-content: space-between;
+  color: white;
+  background-color: #3778c2;
+}
+
  .session_options {
   display: flex;
   flex-direction: column;
