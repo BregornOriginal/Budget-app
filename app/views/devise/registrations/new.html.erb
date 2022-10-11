@@ -1,4 +1,25 @@
-<h2>Sign up</h2>
+<nav>
+  <div class='phone_status'>
+    <li>
+      <i class="fa-sharp fa-solid fa-signal"></i>  
+    </li>
+    <li>
+      <i class="fa-solid fa-battery-half"></i>
+    </li>
+  </div>
+  <ul class= 'log_in_nav'>
+    <li><%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-xl"></i>
+    </li>
+    <% end %>
+    <li>
+      <h3>REGISTER</h3>
+    </li>
+    <li>
+      <h4>Next</h2>
+    </li>
+  </ul>
+</nav>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
