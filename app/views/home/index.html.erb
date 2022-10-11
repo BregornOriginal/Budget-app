@@ -1,6 +1,12 @@
-<h1>budget tracker</h1>
-
-<div class= 'session_options'>
-  <%= link_to 'Log_in', new_user_session_path %>
-  <%= link_to 'Sign_up', new_user_registration_path %>
+<div class='splash_title'>
+  <h1>Budget tracker</h1>
 </div>
+
+<section class= 'session_options'>
+  <button class= 'session_button'>
+    <%= link_to 'LOG IN', new_user_session_path %>
+  </button>
+  <button class= 'session_button'>
+    <%= link_to 'SIGN UP', new_user_registration_path %>
+    </button>
+</section>

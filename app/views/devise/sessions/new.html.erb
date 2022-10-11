@@ -1,4 +1,14 @@
-<h2>Log in</h2>
+<nav>
+  <ul class= 'log_in_nav'>
+    <li><%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-xl"></i>
+    </li>
+    <% end %>
+    <li>
+      <h3>LOGIN</h3>
+    </li>
+  </ul>
+</nav>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
