@@ -79,7 +79,7 @@ ul {
   }
 }
 
-.fa-solid {
+.back-arrow {
   color: white;
 }
 
@@ -135,4 +135,10 @@ ul {
     cursor: pointer;
     color: #3778c2;
   }
+}
+
+.splash_nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px 0 20px;
 }
