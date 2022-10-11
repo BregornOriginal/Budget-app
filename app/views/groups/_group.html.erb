@@ -1,13 +1,13 @@
 <div id="<%= dom_id group %>">
+  
   <p>
-    <strong>Name:</strong>
-    <%= group.name %>
+    <strong><%= link_to group.name, group %></strong>
   </p>
 
   <p>
     <strong>Icon:</strong>
     <%= group.icon %>
   </p>
-  <p><%= "Total: #{group_total(group)}"%></p>
+
 
 </div>
