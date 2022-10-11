@@ -18,11 +18,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_200256) do
     t.string "name"
     t.integer "amount"
     t.bigint "user_id", null: false
-    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_budgets_on_author_id"
     t.index ["user_id"], name: "index_budgets_on_user_id"
+  end
+
+  create_table "budgets_groups", id: false, force: :cascade do |t|
+    t.bigint "budget_id", null: false
+    t.bigint "group_id", null: false
+    t.index ["budget_id"], name: "index_budgets_groups_on_budget_id"
+    t.index ["group_id"], name: "index_budgets_groups_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -32,13 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_200256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
-  end
-
-  create_table "groups_and_budgets", id: false, force: :cascade do |t|
-    t.bigint "group_id"
-    t.bigint "budget_id"
-    t.index ["budget_id"], name: "index_groups_and_budgets_on_budget_id"
-    t.index ["group_id"], name: "index_groups_and_budgets_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,6 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_200256) do
   end
 
   add_foreign_key "budgets", "users"
-  add_foreign_key "budgets", "users", column: "author_id"
   add_foreign_key "groups", "users"
 end
