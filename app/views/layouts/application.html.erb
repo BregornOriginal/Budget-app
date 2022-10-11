@@ -8,14 +8,15 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/7b2c5e5844.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <nav class= "navigation_bar">
-      <ul class= "nav_links">
-        <li><%= link_to "Categories", groups_path %></li>
-      </ul>
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <nav class= "navigation_bar">
+        <ul class= "nav_links">
+          <li><%= link_to "Categories", groups_path %></li>
+        </ul>
         <div class= "log_out_container">
           <%= button_to "Log out", destroy_user_session_path,
           { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
