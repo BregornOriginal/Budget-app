@@ -5,6 +5,7 @@ class BudgetsController < ApplicationController
   # GET /budgets or /budgets.json
   def index
     @budgets = Budget.all
+    @groups = Group.all
     @group = Group.find(params[:group_id]) 
   end
 

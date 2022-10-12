@@ -6,11 +6,8 @@
 </div>
 
 <div id="budgets">
-  <% @budgets.each do |budget| %>
-    <%= render budget %>
-  <% end %>
+    <%= render "transactions", transactions: @group.transactions %>
 </div>
-
 <button>
   <%= link_to "Add a new transaction", new_group_budget_path %>
 </button>
