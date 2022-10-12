@@ -1,13 +1,7 @@
 <div id="<%= dom_id group %>">
-  
+  <%= image_tag "#{group.icon}", size: "75x75" %>
   <p>
-    <strong><%= link_to group.name, group_budgets_path(group.id) %></strong>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
+    <%= group.name %>
   </p>
   <p>$ <%= group.total_price%></p>
-
 </div>

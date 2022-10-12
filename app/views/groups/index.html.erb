@@ -4,7 +4,9 @@
 <p>Total of transactions: $ <%= @groups_budgets%>
 <div id="groups">
   <% @groups.each do |group| %>
+    <%= link_to group_budgets_path(group.id) do %>
     <%= render group %>
+    <% end %>
   <% end %>
 </div>
 
