@@ -4,4 +4,12 @@ class Budget < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 1, maximum: 40 }
   validates :amount, numericality: { greater_than_or_equal_to: 0 }
+
+  def total_price
+    sum = 0
+    budgets.includes([:budgets_groups]).each do |transaction|
+      sum += transaction.amount
+    end
+    sum
+  end
 end
