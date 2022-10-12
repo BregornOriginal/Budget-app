@@ -48,6 +48,7 @@ ul {
 
 .phone_status {
   display: flex;
+  font-size: 20px;
   padding: 10px 10px 0 10px;
   justify-content: space-between;
   color: white;
@@ -146,6 +147,17 @@ ul {
   }
 }
 
+.log_out_button {
+  color: white;
+  font-size: 20px;
+  border: none;
+  background-color: #3778c2;
+  &:hover {
+    cursor: pointer;
+    color: #5fb523;
+  }
+}
+
 .splash_nav {
   display: flex;
   justify-content: space-between;
@@ -158,9 +170,24 @@ ul {
 
 .hamburguer_button {
   display: flex;
-  padding: 10px 10px 0 10px;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px;
   justify-content: space-between;
   color: white;
+  background-color: #3778c2;
+}
+
+.search_button_container {
+  display: flex;
+  align-items: center;
+}
+
+.filter_list {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  color: rgb(102, 102, 102);
   background-color: #3778c2;
 }
 

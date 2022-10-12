@@ -22,11 +22,6 @@
             <i class="fa-solid fa-battery-half"></i>
           </li>
         </ul>
-        <ul class= "hamburguer_button">
-          <li>
-            <i class="fa-sharp fa-solid fa-bars"></i>
-          </li>
-        </ul>
         <ul class= "nav_links">
           <li>
             <%= link_to "Categories", groups_path %>
@@ -34,12 +29,9 @@
         <li>
           <%= link_to "Transactions"%>
         </li>
-        <li>
-          <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-        </li>
         <div class= "log_out_container">
           <%= button_to "Log out", destroy_user_session_path,
-          { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
+          { method: :delete, data: { turbo: false}, class: 'log_out_button'} %>
         </div>
         </ul>
       <% end %>
