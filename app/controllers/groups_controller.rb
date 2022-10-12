@@ -9,7 +9,9 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1 or /groups/1.json
-  def show; end
+  def show
+    @group = Group.find(params[:group_id])
+  end
 
   # GET /groups/new
   def new
@@ -67,6 +69,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :user, :icon)
   end
 end

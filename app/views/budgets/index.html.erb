@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Budgets</h1>
+<h1>Transactions</h1>
+  <p>Total amount of transactions for this category: $ <%= @group.total_price%></p>
 
-<div id="budgets">
-  <% @budgets.each do |budget| %>
-    <%= render budget %>
-    <p>
-      <%= link_to "Show this budget", budget %>
-    </p>
-  <% end %>
+<div class='back_button_container'>
+  <%=link_to 'Go back', groups_url, class: 'create_button back_button' %>
 </div>
 
-<%= link_to "New budget", new_group_budget_path %>
+<div id="budgets">
+    <%= render "transactions", transactions: @group.transactions %>
+</div>
+<button>
+  <%= link_to "Add a new transaction", new_group_budget_path %>
+</button>

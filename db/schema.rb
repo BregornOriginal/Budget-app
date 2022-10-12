@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_200256) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.string "icon"
+    t.string "icon", default: "https://i.ibb.co/GMbr63g/paper-bill-transaction-receipt-payment-260nw-1956128284.png"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

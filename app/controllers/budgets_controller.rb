@@ -5,6 +5,8 @@ class BudgetsController < ApplicationController
   # GET /budgets or /budgets.json
   def index
     @budgets = Budget.all
+    @groups = Group.all
+    @group = Group.find(params[:group_id])
   end
 
   # GET /budgets/1 or /budgets/1.json
@@ -12,25 +14,26 @@ class BudgetsController < ApplicationController
 
   # GET /budgets/new
   def new
-    @budget = Budget.new
     @group = Group.find(params[:group_id])
+    @budget = Budget.new
   end
 
   # GET /budgets/1/edit
   def edit
-    @group = Group.find(params[:group_id])
+    @budget = Group.find(params[:group_id])
   end
 
   # POST /budgets or /budgets.json
   def create
-    @group = Group.find(params[:group_id])
     @budget = Budget.new(budget_params)
-    @budget.user = current_user
-    @budget.groups.push(@group)
+    @budget.author = current_user
+    params[:budget][:groups].each do |id|
+      @budget.groups.push(Group.find(id)) if id != ''
+    end
 
     respond_to do |format|
       if @budget.save
-        format.html { redirect_to group_budgets_path(@group), notice: 'Budget was successfully created.' }
+        format.html { redirect_to groups_path, notice: 'Budget was successfully created.' }
         format.json { render :show, status: :created, location: @budget }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -43,7 +46,7 @@ class BudgetsController < ApplicationController
   def update
     respond_to do |format|
       if @budget.update(budget_params)
-        format.html { redirect_to budget_url(@budget), notice: 'Budget was successfully updated.' }
+        format.html { redirect_to budget_path, notice: 'Budget was successfully updated.' }
         format.json { render :show, status: :ok, location: @budget }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,10 +57,12 @@ class BudgetsController < ApplicationController
 
   # DELETE /budgets/1 or /budgets/1.json
   def destroy
+    @budget = Budget.find(params[:id])
+    @group = Group.find_by(id: params[:group_id])
     @budget.destroy
 
     respond_to do |format|
-      format.html { redirect_to budgets_url, notice: 'Budget was successfully destroyed.' }
+      format.html { redirect_to group_url(@group), notice: 'Budget was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +76,6 @@ class BudgetsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def budget_params
-    params.require(:budget).permit(:name, :amount)
+    params.require(:budget).except(:groups).permit(:name, :amount, :user, :group, :author)
   end
 end
