@@ -7,4 +7,12 @@ class Group < ApplicationRecord
   def transactions
     budgets.order('created_at DESC')
   end
+
+  def total_price
+    sum = 0
+    budgets.includes([:budgets_groups]).each do |transaction|
+      sum += transaction.amount
+    end
+    sum
+  end
 end
