@@ -1,4 +1,4 @@
-<%= form_with(model: budget, url: groups_path) do |form| %>
+<%= form_with(model: budget, url: group_budgets_url(@group)) do |form| %>
   <% if budget.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
@@ -21,13 +21,10 @@
     <%= form.number_field :amount %>
   </div>
 
-  <p>Categories
-    <% @budget.groups.each do |category| %>
-      <p>
-        <% image_tag("#{category.icon}.png", alt: category.name, title: category.name)%>
-      </p>
-    <% end %>
-  </p>
+  <div>
+    <p>Categories</p>
+    <%= form.collection_check_boxes :groups, Group.all, :id, :name %>
+  </div>
 
   <div>
     <%= form.submit %>

@@ -9,7 +9,7 @@
   <% @budgets.each do |budget| %>
     <%= render budget %>
     <p>
-      <%= link_to "Show this budget", budget %>
+      <%= link_to "Show this budget", group_budgets_url() %>
     </p>
   <% end %>
 </div>
