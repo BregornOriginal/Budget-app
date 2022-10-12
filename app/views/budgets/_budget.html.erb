@@ -8,4 +8,6 @@
     <strong>Amount:</strong>
     <%= budget.amount %>
   </p>
+
+  <%= button_to "REMOVE", group_budget_path(@group, budget), method: :delete %>
 </div>

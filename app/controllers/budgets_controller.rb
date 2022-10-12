@@ -5,6 +5,7 @@ class BudgetsController < ApplicationController
   # GET /budgets or /budgets.json
   def index
     @budgets = Budget.all
+    @group = Group.find(params[:group_id]) 
   end
 
   # GET /budgets/1 or /budgets/1.json
@@ -55,10 +56,12 @@ class BudgetsController < ApplicationController
 
   # DELETE /budgets/1 or /budgets/1.json
   def destroy
+    @budget = Budget.find(params[:id])
+    @group = Group.find_by(id: params[:group_id])
     @budget.destroy
 
     respond_to do |format|
-      format.html { redirect_to budgets_url, notice: 'Budget was successfully destroyed.' }
+      format.html { redirect_to group_url(@group), notice: 'Budget was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
