@@ -6,7 +6,7 @@ class BudgetsController < ApplicationController
   def index
     @budgets = Budget.all
     @groups = Group.all
-    @group = Group.find(params[:group_id]) 
+    @group = Group.find(params[:group_id])
   end
 
   # GET /budgets/1 or /budgets/1.json
@@ -14,7 +14,7 @@ class BudgetsController < ApplicationController
 
   # GET /budgets/new
   def new
-    @group = Group.find(params[:group_id]) 
+    @group = Group.find(params[:group_id])
     @budget = Budget.new
   end
 
@@ -28,9 +28,9 @@ class BudgetsController < ApplicationController
     @budget = Budget.new(budget_params)
     @budget.author = current_user
     params[:budget][:groups].each do |id|
-      @budget.groups.push(Group.find(id)) if id != "" 
+      @budget.groups.push(Group.find(id)) if id != ''
     end
-    
+
     respond_to do |format|
       if @budget.save
         format.html { redirect_to groups_path, notice: 'Budget was successfully created.' }
