@@ -1,7 +1,12 @@
+@font-face {
+  font-family: 'Proxima_Nova';
+  src: url('proxima_nova_font.otf')
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Proxima_Nova';
 }
 
 a {
