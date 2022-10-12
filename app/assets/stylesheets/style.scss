@@ -151,3 +151,28 @@ ul {
   justify-content: space-between;
   padding: 20px 15px 0 20px;
 }
+
+.nav_links {
+  display: none;
+}
+
+.hamburguer_button {
+  display: flex;
+  padding: 10px 10px 0 10px;
+  justify-content: space-between;
+  color: white;
+  background-color: #3778c2;
+}
+
+@media only screen and (min-width: 768px) {
+  .hamburguer_button {
+    display: none;
+  }
+.nav_links {
+  display: flex;
+  padding: 10px 10px 0 10px;
+  justify-content: space-between;
+  color: white;
+  background-color: #3778c2;
+  }
+}
