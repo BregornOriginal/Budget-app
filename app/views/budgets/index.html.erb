@@ -28,10 +28,11 @@
   <%=link_to 'Go back', groups_url, class: 'create_button back_button' %>
 </div>
 
-<div id="budgets">
+<div id="budgets" class="transactions_container">
     <%= render "transactions", transactions: @group.transactions %>
 </div>
-<button>
-  <%= link_to "Add a new transaction", new_group_budget_path %>
-</button>
-<p style="color: green"><%= notice %></p>
+<div class="new_category_container">
+  <button class="new_category_button">
+    <%= link_to "NEW TRANSACTION", new_group_budget_path %>
+  </button>
+</div>

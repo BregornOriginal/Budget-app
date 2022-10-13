@@ -1,7 +1,7 @@
 <% transactions.each do |transaction| %>
-  <div>
+  <article class='transaction_card'>
     <p><%= transaction.name %></p>
     <p>$ <%= transaction.amount %></p>
     <p>Created at: <%= transaction.created_at.strftime ("%d %b %Y") %></p>
-  </div>
+  </article>
 <% end %>
