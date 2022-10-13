@@ -80,6 +80,8 @@ To edit this project:
 
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-JulioGagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/julio-gagliardi/)
 
+> I want to say thank you to Gregoire Vella on Behance for share her design
+
 ## :star2: Show your support
 
 Give a :star: if you like my project!
