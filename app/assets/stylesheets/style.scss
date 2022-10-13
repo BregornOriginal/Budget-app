@@ -44,19 +44,53 @@ ul {
   background-color: #3778c2;
 }
 
+.category_card {
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 20px 10px 20px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+
+  a {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.transaction_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 20px 10px 20px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+
+  a {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 .contact_icons {
   font-size: 25px;
+
   a {
     margin: 0 15px;
-    color:#3778c2;
+    color: #3778c2;
     transition: 0.3s;
 
     &:hover {
       color: #5fb523;
       font-size: 28px;
-      filter:brightness(1.5);
+      filter: brightness(1.5);
     }
   }
+}
+
+.back_button {
+  padding: 15px 0 0 15px;
 }
 
 .session_options {
@@ -125,53 +159,12 @@ ul {
   justify-content: flex-start;
 }
 
-.category_card {
-  border-radius: 10px;
-  padding: 15px;
-  margin: 0 20px 10px 20px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
-
-  a {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-.transaction_card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 0 20px 10px 20px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
-
-  a {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
 .transactions_container {
   display: grid;
   gap: 20px 5px;
   grid-template-rows: 2.5fr 2.5fr;
   grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
   padding-bottom: 50px;
-}
-
-.back_button {
-  padding: 15px 0 0 15px;
-
-  a {
-    color: #5fb523;
-
-    &:hover {
-      color: #3778c2;
-    }
-  }
 }
 
 .actions {
