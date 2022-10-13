@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Proxima_Nova';
-  src: url('proxima_nova_font.otf')
+  src: url('proxima_nova_font.otf');
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Proxima_Nova';
+  font-family: 'Proxima_Nova', sans-serif;
 }
 
 a {
@@ -83,7 +83,11 @@ ul {
 }
 
 .field {
+  margin-bottom: 15px;
+
   & input {
+    text-align: center;
+    padding: 0;
     height: 40px;
     width: 230px;
     border-right: none;
@@ -106,21 +110,61 @@ ul {
   justify-content: flex-start;
 }
 
+.category_card {
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 20px 10px 20px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+
+  a {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.transaction_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 20px 10px 20px;
+  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+
+  a {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.transactions_container {
+  display: grid;
+  gap: 20px 5px;
+  grid-template-rows: 2.5fr 2.5fr;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
+  padding-bottom: 50px;
+}
+
+.back_button {
+  padding: 15px 0 0 15px;
+
+  a {
+    color: #5fb523;
+
+    &:hover {
+      color: #3778c2;
+    }
+  }
+}
+
 .actions {
   color: #434b54;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-
-  a {
-    margin-top: 5px;
-    color: #434b54;
-
-    &:hover {
-      color: #3778c2;
-    }
-  }
 }
 
 .button_sign_up {
@@ -141,6 +185,7 @@ ul {
   font-size: 20px;
   border: none;
   background-color: #3778c2;
+
   &:hover {
     cursor: pointer;
     color: #5fb523;
@@ -165,6 +210,7 @@ ul {
   justify-content: space-between;
   color: white;
   background-color: #3778c2;
+
   p {
     padding-left: 60px;
   }
@@ -176,6 +222,7 @@ ul {
   font-size: 18px;
   flex-direction: column;
   align-items: center;
+
   p {
     padding-bottom: 5px;
   }
@@ -198,12 +245,13 @@ ul {
   .hamburguer_button {
     display: none;
   }
-.nav_links {
-  display: flex;
-  padding: 10px 10px 0 10px;
-  justify-content: space-between;
-  color: white;
-  background-color: #3778c2;
+
+  .nav_links {
+    display: flex;
+    padding: 10px 10px 0 10px;
+    justify-content: space-between;
+    color: white;
+    background-color: #3778c2;
   }
 }
 
@@ -222,18 +270,6 @@ ul {
   justify-content: space-between;
 }
 
-.category_card {
-  border-radius: 10px;
-  padding: 15px;
-  margin: 0 20px 10px 20px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
-  a {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
 .new_category_container {
   display: flex;
   justify-content: center;
@@ -247,6 +283,7 @@ ul {
   border-radius: 40px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+
   &:hover {
     cursor: pointer;
     background-color: #3778c2;
@@ -266,57 +303,16 @@ ul {
   width: 500px;
 }
 
-.field {
-  margin-bottom: 15px;
-
-  input {
-    text-align: center;
-    padding: 0;
-  }
-}
-
-.back_button {
-  padding: 15px 0 0 15px;
-  a {
-    color: #5fb523;
-    &:hover {
-      color: #3778c2;
-    }
-  }
-}
-
 .delete_button {
   background-color: white;
   border: none;
   color: #f37c7c;
   font-size: 20px;
-  &:hover{
+
+  &:hover {
     color: red;
     cursor: pointer;
   }
-}
-
-.transaction_card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 0 20px 10px 20px;
-  box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.5);
-  transition: 0.3s;
-  a {
-    display: flex;
-    justify-content: space-around;
-  }
-}
-
-.transactions_container {
-  display: grid;
-  gap: 20px 5px;
-  grid-template-rows: 2.5fr 2.5fr;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
-  padding-bottom: 50px;
 }
 
 .checkbox_field {
@@ -325,7 +321,9 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  input, label {
+
+  input,
+  label {
     margin: 10px 10px 10px 0;
   }
 }
