@@ -13,7 +13,10 @@
     </div>
   </div>
 </ul>
-<p class="total_transaction">Total of transactions: $ <%= @groups_budgets%>
+<div class= "notifications">
+  <p style="color: green"><%= notice %></p>
+  <p>Total of transactions: $ <%= @groups_budgets%>
+</div>
 <div id="groups" class="categories_container">
   <% @groups.includes([:budgets, :budgets_groups]).each do |group| %>
     <%= render group %>
@@ -23,5 +26,4 @@
   <button class="new_category_button">
     <%= link_to "NEW CATEGORY", new_group_path %>
   </button>
-  <p style="color: green"><%= notice %></p>
 </div>

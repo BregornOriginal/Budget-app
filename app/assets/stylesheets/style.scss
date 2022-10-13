@@ -11,10 +11,6 @@
 
 a {
   text-decoration: none;
-
-  &:hover {
-    color: #434b54;
-  }
 }
 
 li {
@@ -23,13 +19,6 @@ li {
 
 ul {
   padding: 0;
-}
-
-.notifications {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 
 .splash_title {
@@ -181,11 +170,15 @@ ul {
   }
 }
 
-.total_transaction {
+.notifications {
   display: flex;
-  justify-content: center;
   padding: 20px 0;
   font-size: 18px;
+  flex-direction: column;
+  align-items: center;
+  p {
+    padding-bottom: 5px;
+  }
 }
 
 .search_button_container {
@@ -255,4 +248,45 @@ ul {
   border-radius: 40px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  &:hover {
+    cursor: pointer;
+    background-color: #3778c2;
+    color: white;
+  }
+}
+
+.new_category_container {
+  display: flex;
+  justify-content: center;
+}
+
+.new_category_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  padding: 50px;
+  border: 5px solid #219cf31a;
+  border-radius: 70px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  width: 500px;
+}
+
+.field {
+  margin-bottom: 15px;
+
+  input {
+    text-align: center;
+    padding: 0;
+  }
+}
+
+.back_button {
+  padding: 15px 0 0 15px;
+  a {
+    color: #5fb523;
+    &:hover {
+      color: #3778c2;
+    }
+  }
 }
