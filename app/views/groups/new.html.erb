@@ -1,0 +1,22 @@
+<ul class= "hamburguer_button">
+  <li>
+    <i class="fa-sharp fa-solid fa-bars"></i>
+  </li>
+  <li>
+    <p>NEW CATEGORY</p>
+  </li>
+  <div class= "search_button_container">
+    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+    <div class= "log_out_container">
+      <%= button_to "Log out", destroy_user_session_path,
+      { method: :delete, data: { turbo: false}, class: 'log_out_button'} %>
+    </div>
+  </div>
+</ul>
+<div class="back_button">
+  <%= link_to groups_path do %>
+  <i class="fa-solid fa-arrow-left fa-xl"></i>
+  <% end %>
+</div>
+
+<%= render "form", group: @group %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/7b2c5e5844.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <nav class= "navigation_bar">
+        <ul class='phone_status'>
+          <li>
+            <i class="fa-sharp fa-solid fa-signal"></i>  
+          </li>
+          <li>
+            <i class="fa-solid fa-battery-half"></i>
+          </li>
+        </ul>
+        <ul class= "nav_links">
+          <li>
+            <%= link_to "Categories", groups_path %>
+          </li>
+        <li>
+          <%= link_to "Transactions"%>
+        </li>
+        <div class= "log_out_container">
+          <%= button_to "Log out", destroy_user_session_path,
+          { method: :delete, data: { turbo: false}, class: 'log_out_button'} %>
+        </div>
+        </ul>
+      <% end %>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

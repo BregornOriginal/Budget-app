@@ -1,0 +1,47 @@
+<nav>
+  <div class='phone_status'>
+    <li>
+      <i class="fa-sharp fa-solid fa-signal"></i>  
+    </li>
+    <li>
+      <i class="fa-solid fa-battery-half"></i>
+    </li>
+  </div>
+  <ul class= 'log_in_nav'>
+    <li><%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-xl"></i>
+    </li>
+    <% end %>
+    <li>
+      <h3>LOGIN</h3>
+    </li>
+  </ul>
+</nav>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <section class= 'inputs_container'>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+    </div>
+  </section>
+
+  <section class='log_in_options'>
+    <% if devise_mapping.rememberable? %>
+      <div class="remember_me_button">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+    <div class="actions">
+      <%= f.submit "Log in", class: 'button_sign_up' %>
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
+</section>
+
+

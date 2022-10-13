@@ -1,0 +1,29 @@
+<ul class= "hamburguer_button">
+  <li>
+    <i class="fa-sharp fa-solid fa-bars"></i>
+  </li>
+  <li>
+    <p>CATEGORIES</p>
+  </li>
+  <div class= "search_button_container">
+    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+    <div class= "log_out_container">
+      <%= button_to "Log out", destroy_user_session_path,
+      { method: :delete, data: { turbo: false}, class: 'log_out_button'} %>
+    </div>
+  </div>
+</ul>
+<div class= "notifications">
+  <p style="color: green"><%= notice %></p>
+  <p>Total of transactions: $ <%= @groups_budgets%></p>
+</div>
+<div id="groups" class="categories_container">
+  <% @groups.includes([:budgets, :budgets_groups]).each do |group| %>
+    <%= render group %>
+    <% end %>
+</div>
+<div class="new_category_container">
+  <button class="new_category_button">
+    <%= link_to "NEW CATEGORY", new_group_path %>
+  </button>
+</div>
