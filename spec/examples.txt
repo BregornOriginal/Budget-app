@@ -1,7 +1,9 @@
 example_id                             | status | run_time        |
 -------------------------------------- | ------ | --------------- |
-./spec/requests/budgets_spec.rb[1:1:1] | failed | 0.00492 seconds |
-./spec/requests/group_spec.rb[1:1:1]   | failed | 0.07425 seconds |
-./spec/requests/home_spec.rb[1:1:1]    | passed | 0.00555 seconds |
-./spec/requests/home_spec.rb[1:1:2]    | passed | 0.52461 seconds |
-./spec/requests/home_spec.rb[1:1:3]    | passed | 0.00862 seconds |
+./spec/features/budget_spec.rb[1:1]    | failed | 0.14976 seconds |
+./spec/features/group_spec.rb[1:1]     | failed | 0.01991 seconds |
+./spec/requests/budgets_spec.rb[1:1:1] | failed | 0.0076 seconds  |
+./spec/requests/groups_spec.rb[1:1:1]  | failed | 0.05352 seconds |
+./spec/requests/home_spec.rb[1:1:1]    | passed | 0.00567 seconds |
+./spec/requests/home_spec.rb[1:1:2]    | passed | 0.00574 seconds |
+./spec/requests/home_spec.rb[1:1:3]    | passed | 0.55729 seconds |

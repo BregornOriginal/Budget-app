@@ -45,7 +45,7 @@
   </section>
 
   <div class="actions">
-    <%= f.submit "Sign up", class: 'button_sign_up' %>
+    <%= f.submit "Sign up", data: { turbo: false }, class: 'button_sign_up' %>
     <%= render "devise/shared/links" %>
   </div>
 <% end %>
