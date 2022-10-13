@@ -14,20 +14,23 @@ RSpec.describe 'Budget', type: :request do
     )
   end
 
-  describe 'GET /budgets' do
-    before(:example) { get '/budgets' }
+  before :each do
+    group = Group.new
+    group.user = subject
+    group.id = 1
+    group.save
+  end
 
-    it 'returns http success' do
+  context 'GET #index' do
+    it 'renders the :index view' do
       sign_in(subject)
-      expect(response).to have_http_status(:success)
-    end
+      get '/groups/1/budgets'
 
-    it 'renders the correct template' do
+      expect(response).to be_successful
+
       expect(response).to render_template(:index)
-    end
 
-    it 'includes the title' do
-      expect(response.body).to include('<h1>Budgets</h1>')
+      expect(response.body).to include('TRANSACTIONS')
     end
   end
 end
