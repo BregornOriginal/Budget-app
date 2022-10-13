@@ -1,5 +1,10 @@
 <% transactions.each do |transaction| %>
   <article class='transaction_card'>
+    <div>
+      <%= button_to group_budget_path(@group, transaction), method: :delete, class: "delete_button" do %>
+      <i class="fa-solid fa-x"></i>
+      <% end %>
+    </div>
     <p><%= transaction.name %></p>
     <p>$ <%= transaction.amount %></p>
     <p>Created at: <%= transaction.created_at.strftime ("%d %b %Y") %></p>
