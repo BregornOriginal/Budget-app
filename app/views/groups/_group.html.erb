@@ -1,10 +1,15 @@
 <div id="<%= dom_id group%>">
   <article class='category_card'>
     <%= link_to group_budgets_path(group.id) do %>
-    <%= image_tag "#{group.icon}", size: "75x75" %>
+    <div class="icon_container">
+      <%= image_tag "#{group.icon}", size: "75x75" %>
+    </div>
+    <div class="info_container">
     <p>
       <%= group.name %>
     </p>
+    <p>Created at: <%= group.created_at.strftime ("%d %b %Y")%></p>
+    </div>
     <p>$ <%= group.total_price%></p>
     <% end %>
   </article>

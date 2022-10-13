@@ -2,6 +2,6 @@
   <div>
     <p><%= transaction.name %></p>
     <p>$ <%= transaction.amount %></p>
-    <p><%= transaction.created_at %></p>
+    <p>Created at: <%= transaction.created_at.strftime ("%d %b %Y") %></p>
   </div>
 <% end %>
