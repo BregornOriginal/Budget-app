@@ -1,9 +1,21 @@
-<h1>New transaction</h1>
-
-<%= render "form", budget: @budget %>
-
-<br>
-
-<div>
-  <%= link_to "Back to budgets", groups_path %>
+<ul class= "hamburguer_button">
+  <li>
+    <i class="fa-sharp fa-solid fa-bars"></i>
+  </li>
+  <li>
+    <p>NEW TRANSACTION</p>
+  </li>
+  <div class= "search_button_container">
+    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+    <div class= "log_out_container">
+      <%= button_to "Log out", destroy_user_session_path,
+      { method: :delete, data: { turbo: false}, class: 'log_out_button'} %>
+    </div>
+  </div>
+</ul>
+<div class="back_button">
+  <%= link_to groups_path do %>
+  <i class="fa-solid fa-arrow-left fa-xl"></i>
+  <% end %>
 </div>
+<%= render "form", budget: @budget %>
