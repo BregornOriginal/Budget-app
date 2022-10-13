@@ -1,5 +1,10 @@
 <div id="<%= dom_id group%>">
   <article class='category_card'>
+    <div>
+      <%= button_to group, method: :delete, class: "delete_button" do %>
+      <i class="fa-solid fa-x"></i>
+      <% end %>
+    </div>
     <%= link_to group_budgets_path(group.id) do %>
     <div class="icon_container">
       <%= image_tag "#{group.icon}", size: "75x75" %>
