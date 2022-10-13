@@ -16,6 +16,10 @@ You can see the total amount of your expenses of each category, and the total am
 
 The style followed is a mobile-first structure.
 
+## Pesentation
+
+https://www.loom.com/share/1492d3e6e83e40bcaa6131f4c9410839
+
 ## Live Version
 
 [Avaible Soon on Heroku]()
