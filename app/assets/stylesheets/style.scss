@@ -290,3 +290,14 @@ ul {
     }
   }
 }
+
+.delete_button {
+  background-color: white;
+  border: none;
+  color: #f37c7c;
+  font-size: 20px;
+  &:hover{
+    color: red;
+    cursor: pointer;
+  }
+}

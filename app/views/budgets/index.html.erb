@@ -1,13 +1,28 @@
+<ul class= "hamburguer_button">
+  <li>
+    <i class="fa-sharp fa-solid fa-bars"></i>
+  </li>
+  <li>
+    <p>TRANSACTIONS</p>
+  </li>
+  <div class= "search_button_container">
+    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+    <div class= "log_out_container">
+      <%= button_to "Log out", destroy_user_session_path,
+      { method: :delete, data: { turbo: false}, class: 'log_out_button'} %>
+    </div>
+  </div>
+</ul>
 <div>
   <ul class="filter_list">
     <li style="color: white">Most recent</li>
     <li style= "color: #b3b3b3" >Most ancient</li>
   </ul>
 </div>
-
-
-<h1>Transactions</h1>
+<div class= "notifications">
+  <p style="color: green"><%= notice %></p>
   <p>Total amount of transactions for this category: $ <%= @group.total_price%></p>
+</div>
 
 <div class='back_button_container'>
   <%=link_to 'Go back', groups_url, class: 'create_button back_button' %>
