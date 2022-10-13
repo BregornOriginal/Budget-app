@@ -19,14 +19,17 @@
     <li style= "color: #b3b3b3" >Most ancient</li>
   </ul>
 </div>
+<div class="back_button">
+  <%= link_to groups_url, class: "create_button back_button" do %>
+  <i class="fa-solid fa-arrow-left fa-xl"></i>
+  <% end %>
+</div>
+
 <div class= "notifications">
   <p style="color: green"><%= notice %></p>
   <p>Total amount of transactions for this category: $ <%= @group.total_price%></p>
 </div>
 
-<div class='back_button_container'>
-  <%=link_to 'Go back', groups_url, class: 'create_button back_button' %>
-</div>
 
 <div id="budgets" class="transactions_container">
     <%= render "transactions", transactions: @group.transactions %>
