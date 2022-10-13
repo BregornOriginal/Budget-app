@@ -20,6 +20,11 @@ The style followed is a mobile-first structure.
 
 [Avaible Soon on Heroku]()
 
+## Demo
+
+![blog-app-view](https://user-images.githubusercontent.com/93630700/195625663-549514a9-6b19-4387-b897-5ebbd08bf21f.gif)
+
+
 ## Built With:
 
 - Ruby on Rails
