@@ -15,7 +15,7 @@
 </ul>
 <div class= "notifications">
   <p style="color: green"><%= notice %></p>
-  <p>Total of transactions: $ <%= @groups_budgets%>
+  <p>Total of transactions: $ <%= @groups_budgets%></p>
 </div>
 <div id="groups" class="categories_container">
   <% @groups.includes([:budgets, :budgets_groups]).each do |group| %>
