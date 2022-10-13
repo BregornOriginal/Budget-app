@@ -1,24 +1,80 @@
-# README
+# Budget-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I've been working on this RoR Capstone for the last 3 days, the app is about a Bugdet-app.
 
-Things you may want to cover:
+There is a splash home page where you have the option to log_in and sign_up in the app. If you don't have an account you can't visit the webpage.
 
-* Ruby version
+The sig_up option has a email-validation, were I added the gem `letter-opener` to acept the email confirmation.
 
-* System dependencies
+When a user is Log_in you can visit the app and work in yours categories and transactions.
 
-* Configuration
+Also this have a database on Postresql, where the data is stored an avaible to use.
 
-* Database creation
+You can create a category and add expenses to it.
 
-* Database initialization
+You can see the total amount of your expenses of each category, and the total amount of all the expenses in general.
 
-* How to run the test suite
+The style followed is a mobile-first structure.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Live Version
 
-* Deployment instructions
+[Avaible Soon on Heroku]()
 
-* ...
+## Built With:
+
+- Ruby on Rails
+- RSpec
+- SASS
+- PostgresSQL
+- Devise
+- CanCanCan
+
+Prerequisites
+
+- Ruby 3.1.2 or newer
+- Rails 7.0.4 or newer
+- Git
+- NPM
+- PostgreSQL
+- Modern web browser
+
+## Getting Started
+- To get a local copy of this project clone this repository or download the Zip folder:
+git clone https://github.com/BregornOriginal/budget-app.git
+
+- To get started, In the root directory run:
+gem install bundler
+
+- Then run:
+bundle install
+
+- Run ruby on rails app in the Command Line:
+rails s
+
+- Then browse http://localhost:3000
+
+### Usage
+
+To edit this project:
+
+- Open the repository you cloned with a code editor that you like.
+
+- Edit the code as you want.
+
+## Author:
+
+👤 **@BregornOriginal**
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-BregornOriginal-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/BregornOriginal)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Bregorn-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/Bregorn)
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-JulioGagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/julio-gagliardi/)
+
+## :star2: Show your support
+
+Give a :star: if you like my project!
+
+## :pencil: License
+
+This project is [MIT](https://github.com/BregornOriginal/Budget-app/blob/main/LICENSE) licensed.
