@@ -147,23 +147,28 @@ ul {
 }
 
 .inputs_container {
-  padding: 20px 0 0 10px;
+  padding: 200px 0 0 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .remember_me_button {
   display: flex;
-  padding: 10px 0 80px 10px;
+  padding: 10px 0 20px 10px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+.remember_me_button > input{
+  margin-right: 20px;
 }
 
 .transactions_container {
   display: grid;
   gap: 20px 5px;
   grid-template-rows: 2.5fr 2.5fr;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 2fr));
   padding-bottom: 50px;
 }
 
@@ -176,7 +181,7 @@ ul {
 }
 
 .button_sign_up {
-  margin-top: 5px;
+  padding-top: 15px;
   color: #434b54;
   border: none;
   background-color: white;
